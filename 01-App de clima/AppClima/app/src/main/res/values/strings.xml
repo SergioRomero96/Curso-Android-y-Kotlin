@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Clima</string>
+    <string name="text_grado">23°</string>
+    <string name="text_ciudad">Ciudad de Mexico</string>
+    <string name="text_status">Nublado</string>
+
+    <string name="text_bienvenida">
+        Bienvenido a mi app del clima, para poder ver el clima de una ciudad selecciona la opción
+        de abajo.
+    </string>
+    <string name="text_button_mexico">Clima de la Ciudad de México</string>
+    <string name="text_button_berlin">Clima de la Ciudad de Berlín</string>
+</resources>
