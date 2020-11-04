@@ -11,7 +11,7 @@ import java.io.InputStream
 import java.net.HttpURLConnection
 import java.net.URL
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), CompletadoListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -30,33 +30,17 @@ class MainActivity : AppCompatActivity() {
 
         buttonSolicitudHTTP.setOnClickListener {
             if(Network.hayRed(this)){
-                Log.d("buttonSolicitudHTTP", descargarDatos("https://www.google.com"))
+                //Log.d("buttonSolicitudHTTP", descargarDatos("https://www.google.com"))
+                DescargaURL(this).execute("https://www.google.com")
             }else{
                 Toast.makeText(this, "No hay conexion a internet", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    @Throws(IOException::class)
-    private fun descargarDatos(url:String): String{
-        val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
-        StrictMode.setThreadPolicy(policy)
-
-        var inputStream:InputStream? = null
-        try {
-            val uri = URL(url)
-            val conn = uri.openConnection() as HttpURLConnection
-            conn.requestMethod = "GET"
-            conn.connect()
-
-            inputStream = conn.inputStream
-            return inputStream.bufferedReader().use {
-                it.readText()
-            }
-        }finally {
-            if(inputStream != null){
-                inputStream.close()
-            }
-        }
+    override fun descargaCompleta(resultado: String) {
+        Log.d("descargaCompleta", resultado)
     }
+
+
 }
