@@ -5,8 +5,8 @@
     <string name="text_status">Descripción</string>
 
     <string name="text_bienvenida">
-        Bienvenido a mi app del clima, para poder ver el clima de una ciudad selecciona la opción
-        de abajo.
+        Bienvenido a mi app del clima, para poder ver el clima de una ciudad escriba el nombre
+        de una ciudad y seleccione un pais de la lista disponible.
     </string>
     <string name="text_button_mexico">Clima de la Ciudad de México</string>
     <string name="text_button_berlin">Clima de la Ciudad de Berlín</string>
