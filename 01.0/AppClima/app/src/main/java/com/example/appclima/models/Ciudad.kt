@@ -1,9 +1,11 @@
 package com.example.appclima.models
 
-class Ciudad(name:String, weather:ArrayList<Weather>, main:Main) {
-    var name: String = ""
-    var weather:ArrayList<Weather>? = null
-    var main:Main? = null
+import java.io.Serializable
+
+class Ciudad(name:String, weather:ArrayList<Weather>, main:Main):Serializable {
+    var name: String
+    var weather:ArrayList<Weather>
+    var main:Main
 
     init {
         this.name = name

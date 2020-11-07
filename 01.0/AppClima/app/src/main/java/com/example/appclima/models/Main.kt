@@ -1,6 +1,8 @@
 package com.example.appclima.models
 
-class Main(temp: Double) {
+import java.io.Serializable
+
+class Main(temp: Double): Serializable {
     var temp:Double = 0.0
 
     init{

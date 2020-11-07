@@ -1,6 +1,8 @@
 package com.example.appclima.models
 
-class Weather(description:String) {
+import java.io.Serializable
+
+class Weather(description:String): Serializable {
     var description:String = ""
 
     init {
